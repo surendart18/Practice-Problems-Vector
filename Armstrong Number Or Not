@@ -1,0 +1,25 @@
+#include<math.h>
+#include<stdio.h>
+int main()
+{
+        int num,digit,sum=0,count=0;
+        printf("Enter the numebr: \n");
+        scanf("%d",&num);
+        int temp=num;
+        if(num==0)
+                count=1;
+        for(;temp!=0;temp=temp/10)
+                        count++;
+        temp=num;
+        for(;temp!=0;temp=temp/10)
+        {
+                digit=temp%10;
+                sum+=pow(digit,count);
+        }
+        if(sum==num)
+                printf("%d is Armstrong number\n",num);
+        else
+                printf("%d is Not Armstrong number\n",num);
+
+
+}
