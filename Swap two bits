@@ -1,6 +1,7 @@
 Program to swapping of two particular position bits in a given integer number 
 
 
+Method 1:
 
 #include<stdio.h>
 int main()
@@ -15,6 +16,37 @@ int main()
         printf("Enter the position P1 & P2 to swap:\n");
         scanf("%d%d",&p1,&p2);
         if(((num>>p1)&1)!=((num>>p2)&1))
+        {
+                num^=(1<<p1);
+                num^=(1<<p2);
+        }
+        printf("After Swapping of Two Bits:\n");
+        for(int i=31;i>=0;i--)
+                printf("%d",num>>i&1);
+        printf("\n");
+}
+
+
+
+
+
+Method 2:
+
+#include<stdio.h>
+int main()
+{
+        int num,p1,p2,temp1,temp2;
+        printf("Enter the number: \n");
+        scanf("%d",&num);
+        printf("Before Swapping of Two Bits:\n");
+        for(int i=31;i>=0;i--)
+                printf("%d",num>>i&1);
+        printf("\n");
+        printf("Enter the position P1 & P2 to swap:\n");
+        scanf("%d%d",&p1,&p2);
+        temp1=(num&(1<<p1))?1:0;
+        temp2=(num&(1<<p2))?1:0;
+        if(temp1!=temp2)
         {
                 num^=(1<<p1);
                 num^=(1<<p2);
