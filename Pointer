@@ -1,0 +1,13 @@
+Practiced Pointer basic concept
+
+
+#include<stdio.h>
+int main()
+{
+        int x=10;
+        int *p=&x;
+        printf("&x=%p p=%p &p=%p\n",&x,p,&p);
+        printf("x=%d *p=%d\n",x,*p);
+        *p=20;
+        printf("x=%d *p=%d\n",x,*p);
+}
