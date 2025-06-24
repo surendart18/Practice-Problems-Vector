@@ -1,0 +1,18 @@
+Accesing data and modifying the data using pointer concept 
+
+
+#include<stdio.h>
+int main()
+{
+        int x=10,y=20;
+        int *p=&x;
+        printf("x=%d y=%d\n",x,y);
+        printf("&x=%p &y=%p &p=%p\n",&x,&y,&p);
+        *p=15;
+        printf("&x=%p p=%p\n",&x,p);
+        printf("x=%d *p=%d\n",x,*p);
+        p=&y;
+        *p=35;
+        printf("&y=%p p=%p\n",&y,p);
+        printf("y=%d *p=%d\n",y,*p);
+}
