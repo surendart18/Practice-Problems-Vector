@@ -1,0 +1,18 @@
+To check whether the machine follows Little Endian or Big endian format 
+to store the data
+
+
+#include<stdio.h>
+int main()
+{
+        int x=300;
+        char *p=(char *)&x;
+        if(*p==44)
+                printf("Little Endian \n");
+        else
+                printf("Big Endian \n");
+}
+
+
+
+        //if(*(char *)&x==44)
