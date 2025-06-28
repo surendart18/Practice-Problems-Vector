@@ -1,0 +1,23 @@
+Check that array elements are palindrome format or not.
+
+
+
+#include<stdio.h>
+int main()
+{
+        int a[]={1,2,3,4,5,6,4,3,2,1};
+        int n=sizeof a/sizeof a[0];
+        int i,j;
+        for(i=0;i<n;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+        for(i=0,j=n-1;i<j;i++,j--)
+        {
+                if(a[i]!=a[j])
+                        break;
+        }
+        if(i<j)
+                printf("Not Palindrome \n");
+        else
+                printf("Palindrome \n");
+}
