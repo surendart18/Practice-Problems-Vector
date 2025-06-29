@@ -1,0 +1,32 @@
+Write a program to find the no.of prime numbers
+from the given array elements and display it.
+
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+        int a[]={1,4,2,8,4,5,22,11,15,13,17};
+        int i,j,n=sizeof a/sizeof a[0],count=0;
+        printf("Prime Numbers : \n");
+        for(i=0;i<n;i++)
+        {
+                if(a[i]<2)
+                        continue;
+                int flag=1;
+                for(j=2;j<=sqrt(a[i]);j++)
+                {
+                        if(a[i]%j==0)
+                        {
+                                flag=0;
+                                break;
+                        }
+                }
+                if(flag==1)
+                {
+                        count++;
+                        printf("%d ",a[i]);
+                }
+        }
+        printf("\nNo.of Prime Numbers : %d\n",count);
+}
