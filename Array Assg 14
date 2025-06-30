@@ -1,0 +1,27 @@
+Write a program to delete the array element based 
+On array index (array position) value.
+
+
+
+#include<stdio.h>
+int main()
+{
+        int a[]={1,2,5,4,3,7,6,9,8};
+        int i,n=sizeof a/sizeof a[0],index;
+        for(i=0;i<n;i++)
+                printf("%d ",a[i]);
+        printf("\nEnter the index:\n");
+        scanf("%d",&index);
+        if(!((index>=0)&&(index<n)))
+        {
+                printf("Invalid Index\n");
+                return 0;
+        }
+        for(i=index;i<n-1;i++)
+                a[i]=a[i+1];
+        a[n-1]=0;
+        printf("Array Elements After Deletion:\n");
+        for(i=0;i<n;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+}
