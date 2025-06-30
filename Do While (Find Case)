@@ -1,0 +1,24 @@
+Perogram to check Particular character is Uppercase or 
+Lowercase or Digit or Special character using Do While Loop
+
+
+#include<stdio.h>
+int main()
+{
+        char ch,op;
+        do
+        {
+                printf("Enter the character\n");\
+                scanf(" %c",&ch);
+                if((ch>='A')&&(ch<='Z'))
+                        printf("Uppercase\n");
+                else if((ch>='a')&&(ch<='z'))
+                        printf("Lowercase\n");
+                else if((ch>='0')&&(ch<='9'))
+                        printf("Digit\n");
+                else
+                        printf("Special Character\n");
+                printf("Do you want to check another character(y/n)\n");
+                scanf(" %c",&op);
+        }while(op=='y');
+}
