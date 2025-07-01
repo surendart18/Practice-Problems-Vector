@@ -1,0 +1,22 @@
+To print the string using different print statements
+
+
+#include<stdio.h>
+int main()
+{
+        char a[]={'a','b','c','d','e'};
+        char s[]="abc de";
+        printf("Size of a : %ld\n",sizeof a);
+        printf("Size of s : %ld\n",sizeof s);
+        int i,n=sizeof a/sizeof a[0];
+        printf("Using aray:\n");
+        for(i=0;i<n;i++)
+                printf("%c",a[i]);
+        printf("\n");
+        printf("Using s :\n");
+        printf("%s\n",s);
+        printf("Printing string char by char\n");
+        for(i=0;s[i];i++)
+                printf("%c",s[i]);
+        printf("\n");
+}
