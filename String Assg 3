@@ -1,0 +1,25 @@
+Program to Count of alphabets, digits & special characters.
+
+
+
+#include<stdio.h>
+int main()
+{
+        char s[100];
+        int i,upper=0,lower=0,digit=0,splchar=0;
+        printf("Enter the string: \n");
+        scanf(" %[^\n]",s);
+        //fgets(s,sizeof(s),stdin);
+        for(i=0;s[i];i++)
+        {
+                if((s[i]>='A')&&(s[i]<='Z'))
+                        upper++;
+                else if((s[i]>='a')&&(s[i]<='z'))
+                        lower++;
+                else if((s[i]>='0')&&(s[i]<='9'))
+                        digit++;
+                else
+                        splchar++;
+        }
+        printf("Alphabet Upper Case: %d\nAlphabet Lower Case: %d\nDigit: %d\nSpecial Characters: %d\n",upper,lower,digit,splchar);
+}
