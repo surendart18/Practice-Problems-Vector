@@ -1,0 +1,15 @@
+To Print string characters in reverse
+
+
+#include<stdio.h>
+int main()
+{
+        char s[100];
+        int i;
+        printf("Enter the string: \n");
+        scanf(" %[^\n]",s);
+        for(i=0;s[i];i++); //for length of string
+        for(i=i-1;i>=0;i--)
+                printf("%c",s[i]);
+        printf("\n");
+}
