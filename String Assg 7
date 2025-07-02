@@ -1,0 +1,17 @@
+Program to copy a string from source array to destination array
+
+
+#include<stdio.h>
+int main()
+{
+        char s[20],d[20];
+        int i;
+        printf("Enter the source string:\n");
+        scanf(" %[^\n]",s);
+        for(i=0;s[i];i++)
+                d[i]=s[i];
+        d[i]='\0';         // include null character at last
+        //for(i=0;d[i]=s[i];i++);
+        printf("Source string: %s\n",s);
+        printf("Destination string: %s\n",d);
+}
