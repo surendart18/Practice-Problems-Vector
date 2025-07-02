@@ -1,0 +1,16 @@
+Program to Reading the entire string line
+
+
+#include<stdio.h>
+int main()
+{
+        int x;
+        char s[20];
+        printf("Enter the integer: \n");
+        scanf("%d",&x);
+        printf("Enter the string line:\n");
+        scanf(" %[^\n]",s);
+        //scanf("%[^\n]",s);    //wrong
+        //gets(s);              //wrong
+        printf("x=%d \ns=%s\n",x,s);
+}
