@@ -1,0 +1,30 @@
+Program to reverse each words in given string line 
+
+i/p: vector india chennai
+o/p: rotcev aidni iannehc
+
+
+#include<stdio.h>
+int main()
+{
+        char s[200];
+        printf("Enter the string:\n");
+        scanf(" %[^\n]",s);
+        int i=0,start,end,temp;
+        while(s[i]!='\0')
+        {
+                while(s[i]==' ')
+                        i++;
+                start=i;
+                while(s[i]!=' '&&s[i]!='\0')
+                        i++;
+                end=i-1;
+                for(;start<end;start++,end--)
+                {
+                        temp=s[start];
+                        s[start]=s[end];
+                        s[end]=temp;
+                }
+        }
+        printf("%s\n",s);
+}
