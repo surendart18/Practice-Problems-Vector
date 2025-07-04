@@ -1,0 +1,27 @@
+Program to merge 2 string characters into 3rd array.
+
+
+
+#include<stdio.h>
+int main()
+{
+        char s1[100],s2[100],res[100];
+        int i=0,j=0,k=0;
+        printf("Enter the string 1:\n");
+        scanf(" %[^\n]",s1);
+        printf("Enter the string 2:\n");
+        scanf(" %[^\n]",s2);
+        printf("%s\n",s1);
+        printf("%s\n",s2);
+        while(s1[i] && s2[j])
+        {
+                res[k++]=s1[i++];
+                res[k++]=s2[j++];
+        }
+        while(s1[i])
+                res[k++]=s1[i++];
+        while(s2[j])
+                res[k++]=s2[j++];
+        res[k]='\0';
+        printf("%s\n",res);
+}
