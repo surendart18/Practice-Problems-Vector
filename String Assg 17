@@ -1,0 +1,36 @@
+Program to rearrange the all words in reverse in the given string line.
+
+
+#include<stdio.h>
+int main()
+{
+        char s[100];
+        int i,start,end,temp;
+        printf("Enter the string:\n");
+        scanf(" %[^\n]",s);
+        for(i=0;s[i];i++);
+        for(start=0,end=i-1;start<end;start++,end--)
+        {
+                temp=s[start];
+                s[start]=s[end];
+                s[end]=temp;
+        }
+        i=0;
+        while(s[i]!='\0')
+        {
+                while(s[i]==' ')
+                        i++;
+                start=i;
+                while(s[i]!=' ' && s[i]!='\0')
+                        i++;
+                end=i-1;
+                int left=start,right=end;
+                for(;left<right;left++,right--)
+                {
+                        temp=s[left];
+                        s[left]=s[right];
+                        s[right]=temp;
+                }
+        }
+        printf("%s\n",s);
+ }
