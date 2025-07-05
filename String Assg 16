@@ -1,0 +1,27 @@
+Program to check sub string is exist or not in a given main string.
+
+
+
+#include<stdio.h>
+int main()
+{
+        char s[30],ss[30];
+        printf("Enter the string:\n");
+        scanf(" %[^\n]",s);
+        printf("Enter the sub string:\n");
+        scanf(" %[^\n]",ss);
+        int i,j;
+        for(i=0;s[i];i++)
+        {
+                if(s[i]==ss[0])
+                {
+                        for(j=1;ss[j];j++)
+                        {
+                                if(ss[j]!=s[i+j])
+                                        break;
+                        }
+                        if(ss[j]=='\0')                                                                                                                      {                                                                                                                                            printf("The substring \"%s\" present in the given string \"%s\"\n",ss,s);
+                                return 0;
+                        }                                                                                                                            }                                                                                                                            }
+        printf("Sub string doesn’t exist in a main string\n");
+}
