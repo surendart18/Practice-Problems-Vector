@@ -1,3 +1,7 @@
+ Program to check sub string is present or not in a main string
+
+
+
 #include<stdio.h>
 int main()
 {
