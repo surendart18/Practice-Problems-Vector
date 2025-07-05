@@ -1,0 +1,24 @@
+Program to reverse the number using function.
+
+
+#include<stdio.h>
+int rev_num(int);
+int main()
+{
+        int n,res;
+        printf("Enter the number:\n");
+        scanf("%d",&n);
+        res=rev_num(n);
+        printf("Reversed Number:%d\n",res);
+}
+int rev_num(int n)
+{
+        int digit,rev=0;
+        while(n!=0)
+        {
+                digit=n%10;
+                rev=(rev*10)+digit;
+                n/=10;
+        }
+        return rev;
+}
