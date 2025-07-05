@@ -16,5 +16,8 @@ int main()
                 if(s[i]==c)
                         count++;
         }
-        printf("No. of times '%c' character present in the \"%s\" string:%d\n",c,s,count);
+        if(count==0)
+                printf("The character '%c' doesn’t existance\n",c);
+        else
+                printf("No. of times '%c' character present in the \"%s\" string:%d\n",c,s,count);
 }
