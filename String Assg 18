@@ -1,4 +1,4 @@
-Program to remove spaces in the given string line 
+Program to Remove spaces in the given string line 
 
 
 #include<stdio.h>
