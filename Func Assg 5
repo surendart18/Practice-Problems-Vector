@@ -1,4 +1,4 @@
-Program to Pass a value to a Function to display Fibonacci series upto given number without Return type function.
+Program to Pass a Value to a Function to display Fibonacci series upto given number without Return type function.
 
 
 #include<stdio.h>
