@@ -1,4 +1,4 @@
-Program to Rearrange the all words in reverse in the given string line.
+Program to Rearrange the all words in reverse in the given String line.
 
 
 #include<stdio.h>
