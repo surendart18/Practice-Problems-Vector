@@ -1,0 +1,13 @@
+Pointer Array (short int *)
+
+
+#include<stdio.h>
+int main()
+{
+        int a[]={10,20,30,40,50};
+        int i,n=sizeof a/sizeof a[0];
+        short int *p=(short int *)a;
+        for(i=0;i<n;i++)
+                printf("%d ",p[i]);
+        printf("\n");
+}
