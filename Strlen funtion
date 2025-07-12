@@ -1,0 +1,11 @@
+Practice strlen() function uses
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        const char *s="Vector India";
+        size_t len=strlen(s);
+        printf("Length of S :%zu\n",len);
+}
