@@ -1,0 +1,17 @@
+Program to convert all alphabets into one particular format in given string line
+
+
+
+#include<stdio.h>
+int main()
+{
+        char s[100];
+        printf("Enter the string:\n");
+        scanf(" %[^\n]",s);
+        for(int i=0;s[i];i++)
+        {
+                if(s[i]>='a' && s[i]<='z')
+                        s[i]^=32;
+        }
+        printf("Into Uppercase Format :%s\n",s);
+}
