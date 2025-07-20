@@ -1,0 +1,21 @@
+Program to Print the First N numbers using Recursion
+
+
+#include<stdio.h>
+void fun(int,int);
+int main()
+{
+        int n;
+        printf("Enter the N value:\n");
+        scanf("%d",&n);
+        fun(n,1);
+        printf("\n");
+}
+void fun(int n,int i)
+{
+        if(i<=n)
+        {
+                printf("%d ",i);
+                fun(n,i+1);
+        }
+}
