@@ -1,0 +1,21 @@
+Program to Find the Sum of Digits for the Given Number
+
+
+
+#include<stdio.h>
+int sum(int,int);
+int main()
+{
+        int n;
+        printf("Enter the number :\n");
+        scanf("%d",&n);
+        int s=sum(n,0);
+        printf("Sum of digits:%d\n",s);
+}
+int sum(int n,int s)
+{
+        int digit;
+        if(n!=0)
+                return sum(n/10,s+(n%10));
+        return s;
+}
