@@ -1,0 +1,35 @@
+Program to perform Addition between the two matrices and store the result on the 3rd matrix.
+
+
+#include<stdio.h>
+int main()
+{
+        int r,c;
+        printf("Enter the rows and columns:\n");
+        scanf("%d %d",&r,&c);
+        int a[10][10],b[10][10],Res[10][10];
+        printf("Enter the 1st matrix\n");
+        for(int i=0;i<r;i++)
+        {
+                for(int j=0;j<c;j++)
+                        scanf("%d",a[i]+j);
+        }
+        printf("Enter the 2nd matrix\n");
+        for(int i=0;i<r;i++)
+        {
+                for(int j=0;j<c;j++)
+                        scanf("%d",b[i]+j);
+        }
+        for(int i=0;i<r;i++)
+        {
+                for(int j=0;j<c;j++)
+                        Res[i][j]=a[i][j]+b[i][j];
+        }
+        printf("Result\n");
+        for(int i=0;i<r;i++)
+        {
+                for(int j=0;j<c;j++)
+                        printf("%d ",Res[i][j]);
+                printf("\n");
+        }
+}
