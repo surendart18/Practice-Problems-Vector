@@ -1,0 +1,15 @@
+Program to Read 5 Strings at Runtime and display it
+
+
+#include<stdio.h>
+int main()
+{
+        //char s[20]="Vector";
+        //printf("%s\n",s);
+        char s[5][20];
+        for(int i=0;i<5;i++)
+                scanf("%s",s[i]);
+        for(int i=0;i<5;i++)
+                printf("%s\n",s[i]);
+
+}
