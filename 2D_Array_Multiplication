@@ -1,0 +1,50 @@
+Program to perform the Multiplication between the two matrices and store the result on the 3rd matrix.
+
+
+#include<stdio.h>
+int main()
+{
+        int r1,c1,r2,c2;
+        int a[10][10],b[10][10],Res[10][10];
+        printf("Enter the rows and columns of 1st MAtrix\n");
+        scanf("%d %d",&r1,&c1);
+        printf("Enter the rows and columns of 2nd MAtrix\n");
+        scanf("%d %d",&r2,&c2);
+        if(c1!=r2)
+        {
+                printf("Matrix MUltiplication for these matrices are not defined\n");
+                return 0;
+        }
+        printf("Enter the 1st Matrix\n");
+        for(int i=0;i<r1;i++)
+        {
+                for(int j=0;j<c1;j++)
+                        scanf("%d",a[i]+j);
+        }
+        printf("Enter the 2nd Matrix\n");
+        for(int i=0;i<r2;i++)
+        {
+                for(int j=0;j<c2;j++)
+                        scanf("%d",b[i]+j);
+        }
+        for(int i=0;i<r1;i++)
+        {
+                for(int j=0;j<c2;j++)
+                        Res[i][j]=0;
+        }
+        for(int i=0;i<r1;i++)
+        {
+                for(int j=0;j<c2;j++)
+                {
+                        for(int k=0;k<c1;k++)
+                                Res[i][j]+=a[i][k]*b[k][j];
+                }
+        }
+        printf("Result\n");
+        for(int i=0;i<r1;i++)
+        {
+                for(int j=0;j<c2;j++)
+                        printf("%d ",Res[i][j]);
+                printf("\n");
+        }
+}
