@@ -1,0 +1,11 @@
+Program to accessn the strings on the command line (command line arguments)
+
+
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        printf("%d\n",argc);
+        for(int i=0;i<argc;i++)
+                printf("argv[%d]=%s\n",i,argv[i]);
+
+}
