@@ -3,6 +3,7 @@ Write a program to provide integer input to a program
 
 
 #include<stdio.h>
+#include<stdlib.h>
 int main(int argc,char *argv[])
 {
         if(argc!=3)
