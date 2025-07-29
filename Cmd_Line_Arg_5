@@ -1,0 +1,26 @@
+write a program to provide all types of inputs to a program using command line arguments.
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=5)
+        {
+                printf("Usage: ./a.out int float char string\n");
+                return 0;
+        }
+        int x;float f;char c;char s[20];
+        x=atoi(argv[1]);
+        f=atof(argv[2]);
+        c=argv[3][0];
+        //s=argv[4];
+        strcpy(s,argv[4]);
+
+        printf("x=%d\n",x);
+        printf("f=%f\n",f);
+        printf("c=%c\n",c);
+        printf("s=%s\n",s);
+}
