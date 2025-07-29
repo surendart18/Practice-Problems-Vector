@@ -1,0 +1,17 @@
+Write a program to provide integer input to a program
+
+
+
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=3)
+        {
+                printf("Usage: ./a.out int int\n");
+                return 0;
+        }
+        int x,y;
+        x=atoi(argv[1]);
+        y=atoi(argv[2]);
+        printf("x=%d y=%d\n",x,y);
+}
