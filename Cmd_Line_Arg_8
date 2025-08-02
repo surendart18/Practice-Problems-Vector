@@ -1,4 +1,4 @@
-Write a program to implement basic Calculator program using command line arguments
+Write a program to Implement basic Calculator program using command line arguments
 
 
 #include<stdio.h>
