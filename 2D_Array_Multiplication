@@ -1,4 +1,4 @@
-Program to perform the Multiplication between the two matrices and store the result on the 3rd matrix.
+Program to Perform the Multiplication between the two matrices and store the result on the 3rd matrix.
 
 
 #include<stdio.h>
