@@ -1,0 +1,39 @@
+Write a Program to design basic calculator program using function and function pointer array
+Return type >> int fun (int,int);
+
+
+#include<stdio.h>
+int sum(int,int);
+int sub(int,int);
+int mul(int,int);
+int divide(int,int);
+int (*fp[])(int,int)={sum,sub,mul,divide};
+int main()
+{
+        int x,y,op;
+        printf("Enter the number:\n");
+        scanf("%d %d",&x,&y);
+        printf("Enter the option:\n"
+                "1.Sum 2.Subtraction 3.Multiplication 4.Division\n");
+        scanf("%d",&op);
+        if(op>=1 && op<=4)
+                printf("Result:%d\n",fp[op-1](x,y));
+        else
+                printf("Invalid Option\n");
+
+}
+int sum(int a,int b)
+{
+        return a+b;
+}
+int sub(int a,int b)
+{
+        return a-b;
+}
+int mul(int a,int b)
+{
+        return a*b;
+} int divide(int a,int b)
+{
+        return a/b;
+}
