@@ -1,0 +1,56 @@
+Write a Program to design Basic calculator using function and function pointer
+
+
+#include<stdio.h>
+int sum(int,int);
+int sub(int,int);
+int mul(int,int);
+int divide(int,int);
+int (*fp)(int,int);
+int main()
+{
+        int x,y,op,res;
+        printf("Enter the number:\n");
+        scanf("%d %d",&x,&y);
+        printf("Enter the option:\n"
+                "1.Sum 2.Subtraction 3.Multiplication 4.Division\n");
+        scanf("%d",&op);
+        switch(op)
+        {
+                case 1:
+                        fp=sum;
+                        break;
+                case 2:
+                        fp=sub;
+                        break;
+                case 3:
+                        fp=mul;
+                        break;
+                case 4:
+                        fp=divide;
+                        break;
+                default:
+                        printf("Invalid Option\n");
+        }
+        if (op>=1 && op<=4)
+           {
+                res=fp(x,y);
+                printf("Res:%d\n",res);
+        }
+}
+int sum(int a,int b)
+{
+        return a+b;
+}
+int sub(int a,int b)
+{
+        return a-b;
+}
+int mul(int a,int b)
+{
+        return a*b;
+}
+int divide(int a,int b)
+{
+        return a/b;
+}
