@@ -102,7 +102,7 @@ int main()
                 printf("\n");
         }
 
-        //free the each single allocated memory
+        //free the each single matrix allocated memory
 
 
         for(i=0;i<r;i++)
