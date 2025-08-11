@@ -1,0 +1,120 @@
+Write a Program to Perform MAtrix Addition with DMA Concepts
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+        int r,c,i,j;
+
+        //get input for rows and cols
+
+        printf("Enter the rows and columns:\n");
+        scanf("%d %d",&r,&c);
+
+        //memory allocation for matrix 1
+
+        int **mat1=(int **)malloc(r*(sizeof(int *)));
+        if(mat1 ==NULL)
+        {
+                printf("Memory Allocation Failed\n");
+                return 1;
+        }
+        for(i=0;i<r;i++)
+        {
+                mat1[i]=(int *)malloc(c * sizeof(int));
+                if(mat1[i] ==NULL)
+                {
+                        printf("Memory Allocation Failed\n");
+                        return 1;
+                }
+        }
+
+        //memory allocation for matrix 2
+
+        int **mat2=(int **)malloc(r *(sizeof(int *)));
+         if(mat2 ==NULL)
+        {
+                printf("Memory Allocation Failed\n");
+                return 1;
+        }
+        for(i=0;i<r;i++)
+        {
+                mat2[i]=(int *)malloc(c * sizeof(int));
+                if(mat2[i] ==NULL)
+                {
+                        printf("Memory Allocation Failed\n");
+                        return 1;
+                }
+        }
+
+        //input first matrix
+
+        printf("Enter the elements of first matrix\n");
+        for(i=0;i<r;i++)
+        {
+                for(j=0;j<c;j++)
+                        scanf("%d",&mat1[i][j]);
+        }
+
+        //input second matrix
+
+        printf("Enter the elements of second matrix\n");
+        for(i=0;i<r;i++)
+        {
+                for(j=0;j<c;j++)
+                         scanf("%d",&mat2[i][j]);
+        }
+
+        //allocate memory for sum matrix
+
+        int **sum=(int **)malloc(r * sizeof(int *));
+        if(sum ==NULL)
+        {
+                printf("Memory Allocation Failed\n");
+                return 1;
+        }
+        for(i=0;i<r;i++)
+        {
+                sum[i]=(int *)malloc(c * sizeof(int));
+                if(sum[i] ==NULL)
+                {
+                        printf("Memory Allocation Failed\n");
+                        return 1;
+                }
+        }
+
+        //Perform Addition
+
+        for(i=0;i<r;i++)
+        {
+                for(j=0;j<c;j++)
+                        sum[i][j]=mat1[i][j]+mat2[i][j];
+        }
+
+        //Print the sum matrix
+   
+        printf("Resulted Matrix:\n");
+        for(i=0;i<r;i++)
+        {
+                for(j=0;j<c;j++)
+                        printf("%d ",sum[i][j]);
+                printf("\n");
+        }
+
+        //free the each single allocated memory
+
+
+        for(i=0;i<r;i++)
+        {
+                free(mat1[i]);
+                free(mat2[i]);
+                free(sum[i]);
+        }
+
+        //free the whole matrix
+
+        free(mat1);
+        free(mat2);
+        free(sum);
+}
