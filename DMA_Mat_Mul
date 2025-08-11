@@ -1,0 +1,137 @@
+Write a Program to Perform Matrix Multiplication with DMA Concepts
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+        int r1,c1,r2,c2,i,j,k;
+        printf("Enter the no. of rows and columns for the matrix 1:\n");
+        scanf("%d %d",&r1,&c1);
+        printf("Enter the no. of rows and columns for the matrix 2:\n");
+        scanf("%d %d",&r2,&c2);
+
+        //checking the condition c1==r2
+
+        if(c1!=r2)
+        {
+                printf("Matrix Multiplication is not Appolicable for these matrices\n");
+                return 0;
+        }
+
+        //memory allocation for the matrix 1
+
+        int **mat1=(int **)malloc(r1*sizeof(int *));
+        if(mat1==NULL)
+        {
+                printf("Memory Allocation Failed\n");
+                return 1;
+        }
+        for(i=0;i<r1;i++)
+        {
+                mat1[i]=(int *)malloc(c1*sizeof(int));
+                if(mat1[i]==NULL)
+                {
+                        printf("Memory Allocation Failed\n");
+                         return 1;
+                }
+        }
+
+        //memory allocation for the matrix 2
+
+        int **mat2=(int **)malloc(r2*sizeof(int *));
+        if(mat2==NULL)
+        {
+                printf("Memory Allocation Failed\n");
+                return 1;
+        }
+        for(i=0;i<r2;i++)
+        {
+                mat2[i]=(int *)malloc(c2*sizeof(int));
+                if(mat2[i]==NULL)
+                {
+                        printf("Memory Allocation Failed\n");
+                        return 1;
+                }
+        }
+
+        //Input the elements for the matrix 1
+
+        printf("Enter the elements for the Matrix 1:\n");
+        for(i=0;i<r1;i++)
+        {
+                for(j=0;j<c1;j++)
+                        scanf("%d",&mat1[i][j]);
+        }
+           //Input the elements for the matrix 2
+
+        printf("Enter the elements for the Matrix 2:\n");
+        for(i=0;i<r2;i++)
+        {
+                for(j=0;j<c2;j++)
+                        scanf("%d",&mat2[i][j]);
+        }
+
+        //Memory Allocation for the MUL Matrix
+
+        int **mul=(int **)malloc(r1*sizeof(int *));
+        if(mul==NULL)
+        {
+                printf("Memory Allocation is Failed\n");
+                return 1;
+        }
+        for(i=0;i<r1;i++)
+        {
+                mul[i]=(int *)malloc(c2*sizeof(int));
+                if(mul[i]==NULL)
+                {
+                        printf("Memory Allocation is Failed\n");
+                        return 1;
+                }
+        }
+
+        //Initialize the MUL matrix as zero
+
+        for(i=0;i<r1;i++)
+        {
+                     for(j=0;j<c2;j++) 
+                        mul[i][j]=0;
+        }
+
+        //perform the matrix multiplication
+
+        for(i=0;i<r1;i++)
+        {
+                for(j=0;j<c2;j++)
+                {
+                        for(k=0;k<c1;k++)
+                                mul[i][j]+=mat1[i][k]*mat2[k][j];
+                }
+        }
+
+        //Prints the MUL Matrix
+
+        printf("Resultant Matrix:\n");
+        for(i=0;i<r1;i++)
+        {
+                for(j=0;j<c2;j++)
+                        printf("%d ",mul[i][j]);
+                printf("\n");
+        }
+
+        //Free the matrices
+
+        for(i=0;i<r1;i++)
+        {
+                free(mat1[i]);
+                free(mul[i]);
+        }        
+        for(i=0;i<r2;i++)
+                free(mat2[i]);
+
+        //Free the whole Matrices
+
+        free(mat1);
+        free(mat2);
+        free(mul);
+}
