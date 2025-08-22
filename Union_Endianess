@@ -1,0 +1,17 @@
+WAP to find whether Little Endian or Big Endian without using the Pointer 
+(Hint : Using Union)
+
+#include<stdio.h>
+union u
+{
+        int x;
+        char ch;
+};
+int main()
+{
+        union u v={300};
+        if(v.ch==44)
+                printf("Little Endian\n");
+        else
+                printf("Big Endian\n");
+}
