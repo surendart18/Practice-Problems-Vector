@@ -1,0 +1,18 @@
+WAP to Print the Double Binary without using the Pointer
+(Hint: Using Union ..(long long int))
+
+
+#include<stdio.h>
+union u
+{
+        double d;
+        long long int x;
+};
+int main()
+{
+        union u v={10.7};
+        for(int i=63;i>=0;i--)
+        {
+                printf("%d",v.x>>i&1);
+        }
+}
