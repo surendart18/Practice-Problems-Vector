@@ -1,0 +1,32 @@
+WAP to get the 3 Student records at Runtime & Print it 
+(using the typedef concept)
+
+
+#include<stdio.h>
+typedef struct st
+{
+        int roll;
+        char name[20];
+        float marks;
+}ST;
+
+void scan(ST*);
+void print(ST*);
+int main()
+{
+        ST s[3];
+        scan(s);
+        print(s);
+}
+void scan(ST *s)
+{
+        for(int i=0;i<3;i++)
+                scanf("%d  %s %f",&s[i].roll,s[i].name,&s[i].marks);
+}
+void print(ST *s)
+{
+        for(int i=0;i<3;i++)
+        {
+                printf("%d %s %f\n",s[i].roll,s[i].name,s[i].marks);
+        }
+}
