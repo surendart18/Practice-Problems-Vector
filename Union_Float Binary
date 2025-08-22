@@ -1,0 +1,18 @@
+WAP to print the Float Binary without using the Pointer 
+(Hint: Using Union ..(int))
+
+
+#include<stdio.h>
+union u
+{
+        float f;
+        int x;
+};
+int main()
+{
+        union u v={10.7};
+        for(int i=31;i>=0;i--)
+        {
+                printf("%d",v.x>>i&1);
+        }
+}
