@@ -1,5 +1,6 @@
 Write a program to Test the File is Exist or Not
 
+Logic 1:
 
 #include<stdio.h>
 int main(int argc,char *argv[])
@@ -11,6 +12,28 @@ int main(int argc,char *argv[])
         }
 
         FILE *fp=fopen(argv[1],"r");
+        if(fp!=NULL)
+        {
+                printf("File is Exist\n");
+        }
+        else
+        {
+                printf("File doesn't Exist\n");
+        }
+}
+
+
+
+Logic 2:
+
+
+#include<stdio.h>
+int main()
+{
+        char a[20];
+        printf("Enter the filename\n");
+        scanf("%s",a);
+        FILE *fp=fopen(a,"r");
         if(fp!=NULL)
         {
                 printf("File is Exist\n");
