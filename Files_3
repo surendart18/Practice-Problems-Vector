@@ -1,0 +1,33 @@
+Write a program to write characters into a file
+
+
+#include<stdio.h>
+int main()
+{
+        char a[20];
+        printf("Enter the file name\n");
+        scanf("%s",a);
+        FILE *fp=fopen(a,"w");
+        if(fp==NULL)
+        {
+                printf("File doesn't exists\n");
+                return 0;
+        }
+        fputc('I',fp);
+        fputc(' ',fp);
+        fputc('a',fp);
+        fputc('m',fp);
+        fputc(' ',fp);
+        fputc('t',fp);
+        fputc('h',fp);
+        fputc('e',fp);
+        fputc(' ',fp);
+        fputc('d',fp);
+        fputc('a',fp);
+        fputc('n',fp);
+        fputc('g',fp);
+        fputc('e',fp);
+        fputc('r',fp);
+        fputc('!',fp);
+        fclose(fp);
+}
