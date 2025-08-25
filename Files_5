@@ -1,0 +1,23 @@
+Write a C program that copies the contents of one file into another file
+
+
+#include<stdio.h>
+int main()
+{
+        char a[20];
+        printf("Enter the source filename\n");
+        scanf("%s",a);
+        FILE *fs=fopen(a,"r");
+        if(fs==NULL)
+        {
+                printf("Source File doesn't exist\n");
+                return 0;
+        }
+        char b[20];
+        printf("Enter the destination filename\n");
+        scanf("%s",b);
+        FILE *fd=fopen(b,"w");
+        char ch;
+        while((ch=fgetc(fs))!=EOF)
+                fputc(ch,fd);
+}
