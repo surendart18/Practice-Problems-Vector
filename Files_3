@@ -1,6 +1,5 @@
 Write a program to write characters into a file
 
-
 #include<stdio.h>
 int main()
 {
