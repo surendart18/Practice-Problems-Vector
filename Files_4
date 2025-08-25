@@ -1,0 +1,22 @@
+ Write a program to find the Size of File.
+
+#include<stdio.h>
+int main()
+{
+        char a[20];
+        printf("Enter the filename\n");
+        scanf("%s",a);
+        FILE *fp=fopen(a,"r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+        char ch;
+        int size=0;
+        while((ch=fgetc(fp))!=EOF)
+        {
+                size++;
+        }
+        printf("Size of %s file is %d\n",a,size);
+}
