@@ -1,0 +1,35 @@
+Write a Program to Find the Characters Count, Line Count, Bigline, Bigline Length of Particular File 
+
+
+#include<stdio.h>
+int main()
+{
+        char a[20];
+        int character=0,line=0,bigline=0,biglinelen=0,count=0;
+        printf("Enter the Filename:\n");
+        scanf("%s",a);
+        //FILE *fp=fopen("sample2.txt","r");
+        FILE *fp=fopen(a,"r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+        char ch;
+        while((ch=fgetc(fp))!=EOF)
+        {
+                ++count;
+                ++character;
+                if(ch=='\n')
+                {
+                        ++line;
+                        if(count>biglinelen)
+                        {
+                                biglinelen=count;
+                                bigline=line;
+                        }
+                        count=0;
+                }
+        }
+        printf("Character count: %d, Line count: %d, Bigline: %d, Bigline length: %d\n",character,line,bigline,biglinelen);
+}
