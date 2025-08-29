@@ -1,0 +1,19 @@
+Write a Program to Implement “mv” Command
+
+
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=3)
+        {
+                printf("Usage : ./a.out file1 file2\n");
+                return 0;
+        }
+
+        int r=rename(argv[1],argv[2]);
+
+        if(r==0)
+                printf("File moved/renamed successfully\n");
+        else
+                printf("Error moving/renaming file\n");  // use perror(" ");
+}
