@@ -1,0 +1,50 @@
+Write a program to copy a file data from one source to multiple destination files. 
+While copy the data into file, the program must check that whether the destination  
+file is exist or not. If exist then program needs user permission  at runtime to copy
+the source file data into a destination file.. if not exist then without permission copy that.
+
+
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        if(argc<3)
+        {
+                printf("Usage : ./a.out src_file dest_files\n");
+                return 0;
+        }
+
+        FILE *fs=fopen(argv[1],"r");
+        if(fs==NULL)
+        {
+                printf("Source File doesn't exist\n");
+                return 0;
+        }
+
+        FILE *fd;
+        char ch,op;
+        int i;
+        for(i=2;i<argc;i++)
+        {
+                fd=fopen(argv[i],"r");
+                if(fd!=NULL)
+                {
+                        printf("%s file is already exist ,do you want to overwrite(y)\n",argv[i]);
+                        scanf(" %c",&op);
+
+                        if(op=='y')
+                        {
+                                fclose(fd);
+                                goto label;
+                        }
+                        else
+                                continue;
+                }
+
+        label:
+                fd=fopen(argv[i],"w");
+                while((ch=fgetc(fs))!=EOF)
+                        fputc(ch,fd);
+                fclose(fd);
+                rewind(fs);
+        }
+}
