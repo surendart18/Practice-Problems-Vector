@@ -15,5 +15,5 @@ int main(int argc,char *argv[])
         if(r==0)
                 printf("The File is removed successfully\n");
         else
-                printf("The File is doesn't Exist\n");
+                printf("The File doesn't Exist\n");
 }
