@@ -1,0 +1,27 @@
+Write a program to understand the functions of fgets() and fputs()
+
+
+#include<stdio.h>
+int main()
+{
+        char str[50];
+        int n;
+
+        FILE *fp=fopen("sample1.txt","r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+
+        printf("Enter the n value to read no. of bytes to string\n");
+        scanf("%d",&n);
+
+        fgets(str,n,fp);  // use while() for read entire string
+        printf("str=%s\n",str);
+
+        fp=fopen("temp.txt","w");
+        fputs(str,fp);
+
+        fclose(fp);
+}
