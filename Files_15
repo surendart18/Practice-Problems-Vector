@@ -1,0 +1,29 @@
+Write a program to Implement “cp” Command using fgets() and fputs()
+
+
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=3)
+        {
+                printf("Usage : ./a.out src_file dest_file\n");
+                return 0;
+        }
+
+        FILE *fs=fopen(argv[1],"r");
+        if(fs==NULL)
+        {
+                printf("Source file doesn't exist\n");
+                return 0;
+        }
+
+        FILE *fd=fopen(argv[2],"w");
+        char str[50];
+        while(fgets(str,5,fs)!=NULL)
+        {
+                fputs(str,fd);
+        }
+
+        fclose(fs);
+        fclose(fd);
+}
