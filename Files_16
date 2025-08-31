@@ -35,12 +35,12 @@ int main(int argc,char *argv[])
         }
         rewind(fp);
 
-        char *str=(char *)malloc((bigline_len+1)*sizeof(char));
+        char *a=(char *)malloc((bigline_len+1)*sizeof(char));
 
-        while((fgets(str,bigline_len+1,fp))!=NULL)
+        while((fgets(a,bigline_len+1,fp))!=NULL)
         {
-                if(strstr(str,argv[1])!=NULL)
-                        printf("%s",str);
+                if(strstr(a,argv[1])!=NULL)
+                        printf("%s",a);
         }
 }
  
