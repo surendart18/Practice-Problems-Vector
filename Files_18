@@ -1,0 +1,26 @@
+Write a program to understand fscanf() operation
+
+
+#include<stdio.h>
+int main()
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+
+        FILE *fp=fopen("New.txt","r");
+
+        if(fp==NULL)
+        {
+                printf("File foesn't exist\n");
+                return 0;
+        }
+
+        fscanf(fp,"%c %d %f %s",&ch,&x,&f,a);
+
+        printf("ch=%c\n",ch);
+        printf("x=%d\n",x);
+        printf("f=%f\n",f);
+        printf("a=%s\n",a);
+}
