@@ -28,7 +28,7 @@ int main(int argc,char *argv[])
                 ++count;
                 if(ch=='\n')
                 {
-                        if(bigline_len<count)
+                        if(count>bigline_len)
                                 bigline_len=count;
                         count=0;
                 }
