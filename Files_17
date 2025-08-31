@@ -1,0 +1,15 @@
+Write a Program to understand fprintf() operation
+
+#include<stdio.h>
+int main()
+{
+        char ch='A';
+        int x=4;
+        float f=4.5;
+        char a[]="Vector";
+
+        FILE *fp=fopen("New.txt","w");
+
+        fprintf(fp,"%c %x %f %s\n",ch,x,f,a);
+        fclose(fp);
+}
