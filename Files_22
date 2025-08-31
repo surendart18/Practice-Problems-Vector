@@ -1,0 +1,22 @@
+Write a program to perform Write & Read Operation from the File.
+
+
+#include<stdio.h>
+int main()
+{
+        FILE *fp=fopen("data.txt","w+");
+
+        char ch;
+        printf("Enter the data into the file\n");
+
+        while((ch=getchar())!=EOF)
+                fputc(ch,fp);
+
+        printf("Data is saved successfully into the file\n");
+
+        rewind(fp);
+
+        while((ch=fgetc(fp))!=EOF)
+                printf("%c",ch);
+        fclose(fp);
+}
