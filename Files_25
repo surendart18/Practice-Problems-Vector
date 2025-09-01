@@ -1,0 +1,30 @@
+Write a program to Capitalize the First letter of each word in a file
+
+
+#include<stdio.h>
+int main()
+{
+        FILE *fp=fopen("data1.txt","r+");
+
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+
+        char ch;
+        int flag=1;
+        while((ch=fgetc(fp))!=EOF)
+        {
+                if(ch==' ' || ch=='\n' || ch=='\t')
+                        flag=1;
+                else if(flag==1 && ch>='a' && ch<='z')
+                {
+                        fseek(fp,-1,SEEK_CUR);
+                        fputc(ch-32,fp);
+                        flag=0;
+                }
+                else
+                        flag=0;
+        }
+}
