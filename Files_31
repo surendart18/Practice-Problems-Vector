@@ -1,0 +1,18 @@
+Write a program to Write the Structure data into a file using fwrite()
+
+
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}v={'A',10,22.5,"Castle"};
+int main()
+{
+        FILE *fp=fopen("data.txt","w");
+
+        fwrite(&v,sizeof(struct st),1,fp);
+        fclose(fp);
+}
