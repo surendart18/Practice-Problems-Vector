@@ -1,0 +1,50 @@
+Write a Program to Reverse the Particular Given String in a Given File.
+Note : Use fseek() and r+ mode to opens the file.
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        FILE *fp=fopen("data.txt","r+");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+
+        char s[20];
+        printf("Enter the word to reverse\n");
+        scanf("%s",s);
+
+        char ch;
+        int i=0,pos=-1;
+        while((ch=fgetc(fp))!=EOF)
+        {
+                if(ch==s[i])
+                {
+                        if(i==0)
+                        {
+                                pos=ftell(fp)-1;
+
+                        }
+                        i++;
+                        if(i==strlen(s))
+                        {
+                                fseek(fp,pos,SEEK_SET);
+
+                                for(int j=strlen(s)-1;j>=0;j--)                                
+                                {
+                                        fputc(s[j],fp);
+                                }
+                                i=0;
+                                pos=-1;
+                        }
+                }
+                else
+                {
+                        i=0;
+                        pos=-1;
+                }
+        }
+}
