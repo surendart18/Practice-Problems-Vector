@@ -1,0 +1,50 @@
+Write a program to Write the structure data to a file & Reads it back from the same file
+
+
+Method 1:
+
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}v={'A',10,22.5,"Vector"},v2;
+
+int main()
+{
+        FILE *fp=fopen("data.txt","w");
+        fwrite(&v,sizeof(struct st),1,fp);
+        fclose(fp);
+
+        FILE *fp2=fopen("data.txt","r");
+        fread(&v2,sizeof(struct st),1,fp2);
+        printf("%c %d %f %s\n",v2.ch,v2.x,v2.f,v2.a);
+}
+
+
+
+Method 2:  (Using wb+ mode)
+
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}v={'A',10,22.5,"Vector"},v2;
+
+int main()
+{
+        FILE *fp=fopen("data.txt","wb+");
+        fwrite(&v,sizeof(struct st),1,fp);
+
+        fseek(fp,0,SEEK_SET);
+
+        fread(&v2,sizeof(struct st),1,fp);
+        printf("%c %d %f %s\n",v2.ch,v2.x,v2.f,v2.a);
+
+        fclose(fp);
+}
