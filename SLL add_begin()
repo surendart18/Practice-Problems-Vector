@@ -1,0 +1,48 @@
+Write a program using Singly Linked List to Store and Display Student Records using add_begin() function.
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+        int roll;
+        char name[20];
+        float marks;
+        struct st *next;
+}ST;
+
+void add_begin(ST **);
+void print(ST *);
+int main()
+{
+        char op;
+        ST *hptr=0;
+        do
+        {
+                add_begin(&hptr);
+                printf("Do you want to add one more student record\n");
+                scanf(" %c",&op);
+        }while((op=='y') || (op=='Y'));
+
+        printf("Printing the records..\n");
+        print(hptr);
+}
+
+void add_begin(ST **ptr)
+{
+        ST *temp=(ST *)malloc(sizeof(ST));
+        printf("Enter the Roll,Name,Marks\n");        scanf("%d %s %f",&temp->roll,temp->name,&temp->marks);
+
+        temp->next=*ptr;
+        *ptr=temp;
+}
+
+void print(ST *ptr)
+{
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
