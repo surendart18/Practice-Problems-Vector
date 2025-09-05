@@ -1,0 +1,72 @@
+Write a program to Insert the data using Single Linked List add_end()
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+        int roll;
+        char name[20];
+        float marks;
+        struct st *next;
+}ST;
+
+void add_end(ST **);
+void save(ST *);
+void print(ST *);
+int main()
+{
+        char op;
+        ST *hptr=0;
+        do
+        {
+                add_end(&hptr);
+                printf("Do you want to add one more student record\n");
+                scanf(" %c",&op);
+        }while((op=='y') || (op=='Y'));
+
+        print(hptr);
+        save(hptr);
+}
+
+void add_end(ST **ptr)
+{
+        ST *temp=(ST *)malloc(sizeof(ST));        
+        printf("Enter the Roll, Name,Marks\n");
+        scanf("%d %s %f",&temp->roll,temp->name,&temp->marks);
+
+        if(*ptr==0)
+        {
+                temp->next=*ptr;
+                *ptr=temp;
+        }
+        else
+        {
+                ST *last=*ptr;
+                while(last->next!=0)
+                        last=last->next;
+                temp->next=last->next;
+                last->next=temp;
+        }
+}
+
+void print(ST *ptr)
+{
+        printf("Printing the records..\n");
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
+
+void save(ST *ptr)
+{
+        FILE *fp=fopen("data1.txt","w");
+        while(ptr)
+        {
+                fprintf(fp,"%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
