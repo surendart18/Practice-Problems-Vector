@@ -1,0 +1,11 @@
+Print the Linked List Data
+
+
+void print(ST *ptr)   //ST *ptr=hptr
+{
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
