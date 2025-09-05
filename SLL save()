@@ -1,0 +1,12 @@
+Save the Data of Linked List
+
+
+void save(ST *ptr)          // ST *ptr=hptr
+{
+        FILE *fp=fopen("data1.txt","w");
+        while(ptr)
+        {
+                fprintf(fp,"%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
