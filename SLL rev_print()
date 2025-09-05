@@ -5,7 +5,7 @@ Reverse Print the data of Singly linked list
 1.Using Loops
 -------------
 
-void rev_print(ST *ptr)
+void rev_print(ST *ptr)                // ST *ptr=hptr;
 {
         ST *temp=ptr;
         int i,j,c=count(ptr);
@@ -24,7 +24,7 @@ void rev_print(ST *ptr)
 2. Using the Array of Pointers
 ------------------------------
 
-void rev_print(ST *ptr)
+void rev_print(ST *ptr)                      // ST *ptr=hptr;
 {
         int i,c=count(ptr);
         ST **p=(ST **)malloc(c*sizeof(ST *));
@@ -45,7 +45,7 @@ void rev_print(ST *ptr)
 3.Using Recursion
 ------------------
 
-void rev_print(ST *ptr)
+void rev_print(ST *ptr)                // ST *ptr=hptr;
 {
         if(ptr)
         {
