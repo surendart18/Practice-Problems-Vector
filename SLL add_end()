@@ -1,4 +1,4 @@
-Write a program to Insert the data using Single Linked List add_end()
+Write a program using Singly Linked List to Store and Display Student Records using add_end() function.
 
 
 #include<stdio.h>
