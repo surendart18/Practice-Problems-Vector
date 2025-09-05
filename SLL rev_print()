@@ -1,0 +1,58 @@
+Reverse Print the data of Singly linked list
+(3-methods)
+
+
+1.Using Loops
+-------------
+
+void rev_print(ST *ptr)
+{
+        ST *temp=ptr;
+        int i,j,c=count(ptr);
+        for(i=0;i<c;i++)
+        {
+                for(j=0;j<c-i-1;j++)
+                        ptr=ptr->next;
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=temp;
+        }
+}
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+2. Using the Array of Pointers
+------------------------------
+
+void rev_print(ST *ptr)
+{
+        int i,c=count(ptr);
+        ST **p=(ST **)malloc(c*sizeof(ST *));
+        for(i=0;i<c;i++)
+        {
+                p[i]=ptr;
+                ptr=ptr->next;
+        }
+        for(i=c-1;i>=0;i--)
+        {
+                printf("%d %s %f\n",p[i]->roll,p[i]->name,p[i]->marks);
+        }
+}
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+3.Using Recursion
+------------------
+
+void rev_print(ST *ptr)
+{
+        if(ptr)
+        {
+                rev_print(ptr->next);
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+        }
+}
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
