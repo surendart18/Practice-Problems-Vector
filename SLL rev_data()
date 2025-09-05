@@ -1,0 +1,53 @@
+Reverse the data of Linked List 
+(2-Methods)
+
+
+
+1.Using Two Pointer Data Swap
+
+
+void rev_data(ST *ptr)      // ST *ptr=hptr;
+{
+        int i,j,c=count(ptr);
+        ST temp;
+        int size=sizeof(ST)-8;
+        ST *p1,*p2;
+        p1=ptr;
+        for(i=0;i<c/2;i++)
+        {
+                p2=ptr;
+                for(j=0;j<c-i-1;j++)
+                {
+                        p2=p2->next;
+                }
+                memcpy(&temp,p1,size);
+                memcpy(p1,p2,size);
+                memcpy(p2,&temp,size);
+
+                p1=p1->next;
+        }
+}
+
+
+
+2. Array of Pointer
+
+
+void rev_data(ST *ptr)          // ST *ptr=hptr;
+{
+        int i,j,c=count(ptr);
+        ST temp;
+        int size=sizeof(ST)-8;
+        ST **p=(ST **)malloc(c*sizeof(ST *));
+        for(i=0;i<c;i++)
+        {
+                p[i]=ptr;
+                ptr=ptr->next;
+        }
+        for(i=0,j=c-1;i<j;i++,j--)
+        {
+                memcpy(&temp,p[i],size);
+                memcpy(p[i],p[j],size);
+                memcpy(p[j],&temp,size);
+        }
+}
