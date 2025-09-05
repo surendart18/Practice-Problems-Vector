@@ -1,0 +1,12 @@
+Count the No. of Nodes in Linked List
+
+int count(ST *ptr)       // ST *ptr=hptr;
+{
+        int count=0;
+        while(ptr)
+        {
+                ++count;
+                ptr=ptr->next;
+        }
+        return count;
+}
