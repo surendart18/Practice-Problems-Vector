@@ -1,0 +1,13 @@
+Delete All the nodes of List
+
+
+void delete_all(ST **ptr)
+{
+        ST *temp;
+        while(*ptr)
+        {
+                temp=*ptr;
+                *ptr=temp->next;
+                free(temp);
+        }
+}
