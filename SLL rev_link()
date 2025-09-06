@@ -1,0 +1,43 @@
+Reverse the Links of List 
+(2-methods)
+
+
+
+1.Using the Array of Pointers
+
+void rev_link(ST **ptr)              // ST **ptr=&hptr;
+{
+        int i,c=count(*ptr);
+        ST *temp=*ptr;
+        ST **p=(ST **)malloc(c*(sizeof(ST *)));
+        for(i=0;i<c;i++)
+        {
+                p[i]=temp;
+                temp=temp->next;
+        }
+        p[0]->next=0;
+        for(i=1;i<c;i++)
+        {
+                p[i]->next=p[i-1];
+        }
+        *ptr=p[c-1];
+}
+
+
+
+
+2.Using the Loops
+
+void rev_link(ST **ptr)        //ST **ptr=&hptr;
+{
+        ST *q,*r;
+        q=0;
+        while(*ptr)
+        {
+                r=q;
+                q=*ptr;
+                *ptr=(*ptr)->next;
+                q->next=r;
+        }
+        *ptr=q;
+}
