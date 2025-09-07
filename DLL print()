@@ -1,0 +1,12 @@
+Print Function for Double Linked List to Print the Data
+
+
+void print(ST *ptr)            // ST *ptr=hptr;
+{
+        printf("printing the records\n");
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+}
