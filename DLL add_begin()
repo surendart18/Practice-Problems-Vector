@@ -1,0 +1,14 @@
+Insert the Data for Double Linked List using add_begin()
+
+
+void add_begin(ST **ptr)          // ST **ptr=&hptr;
+{
+        ST *temp=(ST *)malloc(sizeof(ST));
+        printf("Enter the Roll,Name,Marks\n");
+        scanf("%d %s %f",&temp->roll,temp->name,&temp->marks);
+        temp->prev=0;
+        temp->next=*ptr;
+        if(*ptr)
+                (*ptr)->prev=temp;
+        *ptr=temp;
+}
