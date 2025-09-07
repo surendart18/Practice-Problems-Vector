@@ -1,0 +1,29 @@
+Makefile Generation for SLL
+
+
+
+out:main.o add.o print.o save.o count.o rev_data.o rev_link.o rev_print.o delete.o delete_all.o
+        cc main.o add.o print.o save.o count.o rev_data.o rev_link.o rev_print.o delete.o delete_all.o -o out
+main.o:main.c header.h
+        cc -c main.c
+add.o:add.c header.h
+        cc -c add.c
+print.o:print.c header.h
+        cc -c print.c
+save.o: save.c header.h
+        cc -c save.c
+count.o :count.c header.h
+        cc -c count.c
+rev_data.o: rev_data.c header.h
+        cc -c rev_data.c
+rev_link.o: rev_link.c header.h
+        cc -c rev_link.c
+rev_print.o: rev_print.c header.h
+        cc -c rev_print.c
+delete.o:delete.c header.h
+        cc -c delete.c
+delete_all.o:delete_all.c header.h
+        cc -c delete_all.c
+clean:
+        @echo "cleaning up.. please wait.."
+        rm -f *.o out
