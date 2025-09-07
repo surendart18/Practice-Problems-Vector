@@ -1,0 +1,54 @@
+Main.c File for Double Linked List
+
+
+#include"header.h"
+int main()
+{
+	ST *hptr = 0;
+	char op;
+	do {
+	//add_begin(&hptr);
+	add_end(&hptr);
+	//add_middle(&hptr);
+	printf("Do you wanted tp add another node(y/n)\n");
+	scanf(" %c",&op);
+	}while((op == 'y')||(op == 'Y'));
+
+	print(hptr);
+	printf("Reverse printing the records data\n");
+	rev_print(hptr);
+/*
+	rev_data(hptr);
+	printf("After Reversing the records data\n");
+	print(hptr);
+	printf("Reverse printing the records data\n");
+	rev_print(hptr);
+*/
+/*
+	rev_links(&hptr);
+	printf("After Reversing the records links\n");
+	print(hptr);
+	printf("Reverse printing the records data\n");
+	rev_print(hptr);
+*/
+	int roll;	
+	printf("Enter the roll to delete\n");
+	scanf("%d",&roll);
+	delete(&hptr,roll);
+	printf("After deletion of a node\n");
+	print(hptr);
+	printf("Reverse printing the records data\n");
+	rev_print(hptr);
+/*
+	delete_all(&hptr);
+	printf("After deletion of all nodes\n");
+	print(hptr);
+*/
+	int c = count(hptr);
+	printf("No.of nodes count : %d\n",c);
+	
+	save(hptr);
+	printf("All records are saved successfully in a file\n");
+}
+
+
