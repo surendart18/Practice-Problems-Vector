@@ -1,0 +1,16 @@
+Printing the Records in Reverse for Double Linked List using rev_print()
+
+
+void rev_print(ST *ptr)          // ST *ptr=hptr;
+{
+        printf("Printing the records in reverse\n");
+        while(ptr->next)
+        {
+                ptr=ptr->next;
+        }
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->prev;
+        }
+}
