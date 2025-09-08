@@ -1,0 +1,13 @@
+Count the Number of Nodes in Double Linked List using count()
+
+
+int count(ST *ptr)          // ST *ptr=hptr;
+{
+        int c=0;
+        while(ptr)
+        {
+                ++c;
+                ptr=ptr->next;
+        }
+        return c;
+}
