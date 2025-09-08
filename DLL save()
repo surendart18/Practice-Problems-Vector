@@ -1,0 +1,13 @@
+Save the data in the File for Double Linked List using save() 
+
+
+void save(ST *ptr)        // ST *ptr=hptr;
+{
+        FILE *fp=fopen("data.txt","w");
+        while(ptr)
+        {
+                fprintf(fp,"%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+        fclose(fp);
+}
