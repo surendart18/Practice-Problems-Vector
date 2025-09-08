@@ -1,0 +1,16 @@
+Reverse the Links and Prints the Data of the Double Linked List using rev_link()
+
+
+void rev_link(ST **ptr)              // ST **ptr=&hptr;
+{
+        ST *temp;
+        while(*ptr)
+        {
+                temp=(*ptr)->prev;
+                (*ptr)->prev=(*ptr)->next;
+                (*ptr)->next=temp;
+
+                *ptr=(*ptr)->prev;
+        }
+        *ptr=temp->prev;
+}
