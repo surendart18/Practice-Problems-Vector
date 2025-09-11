@@ -1,0 +1,36 @@
+To Delete the Particular Node Based on Roll Number on Double Linked List
+
+
+void delete_node(ST **ptr,int n)             // ST **ptr=&hptr,int n=roll;
+{
+        ST *temp=*ptr;
+
+        while(temp)
+        {
+                if(temp->roll==n)
+                {
+                        if(temp==*ptr)
+                        {
+                                *ptr=temp->next;
+                                if(*ptr)
+                                {
+                                        (*ptr)->prev=0;
+                                }
+                        }
+                        else
+                        {
+                                temp->prev->next=temp->next;
+                                if(temp->next)
+                                {
+                                        temp->next->prev=temp->prev;
+                                }
+                        }
+                        free(temp);
+                        temp=NULL;
+                        return;
+                }
+                //else
+                        temp=temp->next;
+        }
+        printf("Data doesn't exist to delete\n");
+}
