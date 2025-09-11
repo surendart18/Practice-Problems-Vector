@@ -1,0 +1,13 @@
+To Delete All Nodes in Double Linked List using delete_all()
+
+
+void delete_all(ST **ptr)          // ST *ptr=&hptr
+{
+        ST *temp=*ptr;
+        while(*ptr)
+        {
+                *ptr=temp->next;
+                free(temp);
+                temp=*ptr;
+        }
+}
