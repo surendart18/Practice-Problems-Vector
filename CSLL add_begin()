@@ -1,0 +1,23 @@
+Insert the Data using the add_begin() in Circular Single Linked List
+
+
+void add_begin(ST **ptr)            // ST **ptr=&hptr;
+{
+        ST *temp=(ST *)malloc(sizeof(ST));
+        printf("Enter the Roll,Name,Marks\n");
+        scanf("%d %s %f",&temp->roll,temp->name,&temp->marks);
+
+        if(*ptr==0)
+        {
+                temp->next=temp;
+        }
+        else
+        {
+                ST *last=*ptr;
+                while(last->next!=*ptr)
+                        last=last->next;
+                temp->next=*ptr;
+                last->next=temp;
+        }
+        *ptr=temp;
+}
