@@ -1,0 +1,45 @@
+To Delete the Node of Circular Linked List using delete_node()
+
+
+
+void delete_node(ST **ptr,int n)            //ST **ptr=&hptr,int n=roll;
+{
+        ST *temp=*ptr;
+        ST *last=*ptr;
+
+        do
+        {
+                if(temp->roll==n)
+                        break;
+                last=temp;
+                temp=temp->next;
+        }while(temp!=*ptr);
+
+        if(temp->roll!=n)
+        {
+                printf("Data doesn't exist\n");
+                return ;
+        }
+
+        if(temp->next==temp)
+        {
+                free(temp);
+                *ptr=NULL;
+        }
+
+        else if(temp==*ptr)
+        {
+                last=*ptr;
+                while(last->next!=*ptr)
+                        last=last->next;
+                last->next=temp->next;
+                *ptr=temp->next;
+                free(temp);
+        }
+        else
+        {
+                last->next=temp->next;
+                free(temp);
+        }
+
+}
