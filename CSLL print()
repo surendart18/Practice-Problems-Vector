@@ -1,0 +1,16 @@
+Printing the Data in Circular Single Linked List using the print()
+
+
+
+void print(ST *ptr)        // ST *ptr=hptr;
+{
+        ST *temp=ptr;
+        printf("Printing the records\n");
+        while(temp)
+        {
+                printf("%d %s %f\n",temp->roll,temp->name,temp->marks);
+                temp=temp->next;
+                if(temp==ptr)
+                        break;
+        }
+}
