@@ -1,0 +1,17 @@
+Count the Number of Nodes in Circular Linked List using count()
+
+
+int count(ST *ptr)            // ST *ptr=hptr;
+{
+        int count=0;
+        ST *temp=ptr;
+        while(temp)
+        {
+
+                ++count;
+                temp=temp->next;
+                if(temp==ptr)
+                        break;
+        }
+        return count;
+}
