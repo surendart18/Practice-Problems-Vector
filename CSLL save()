@@ -1,0 +1,16 @@
+Save the Data into the File using the save() for Circular Linked List
+
+
+
+void save(ST *ptr)                        // ST *ptr=hptr;
+{
+        ST *temp=ptr;
+        FILE *fp=fopen("data2.txt","w");
+        while(temp)
+        {
+                fprintf(fp,"%d %s %f\n",temp->roll,temp->name,temp->marks);
+                temp=temp->next;
+                if(temp==ptr)
+                        break;
+        }
+}
