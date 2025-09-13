@@ -1,0 +1,81 @@
+Stack implementation using linked list (add_begin())
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+
+typedef struct st
+{
+        int roll;
+        struct st *next;
+}ST;
+int nodecount=0;
+void display(ST *);
+void pop(ST **);
+void push(ST **);
+int main()
+{
+        int op;
+        ST *hptr=0;
+        while(1)
+        {
+                printf("Enter the option 1.push 2.pop 3.Display 4.exit\n");
+                scanf("%d",&op);
+                switch(op)
+                {
+                        case 1: push(&hptr);break;
+                        case 2: pop(&hptr); break;
+                        case 3: display(hptr); break;
+                        case 4: return 0;
+                        default : printf("Invalid option\n"); break;
+                }
+        }
+}
+void push(ST **ptr)
+{
+        if(nodecount==max)
+        {
+                printf("Stack is Overflow\n");
+                return;
+        }
+        ST *temp=(ST *)malloc(sizeof(ST));
+        printf("Enter the Roll\n");
+        scanf("%d",&temp->roll);
+
+        temp->next=*ptr;
+        *ptr=temp;
+
+        ++nodecount;
+}
+
+void pop(ST **ptr)
+{
+        if(nodecount==0)
+        {
+                printf("Stack is Underflow\n");
+                return;
+        }
+
+        ST *temp=*ptr;
+        printf("Roll %d is popped\n",temp->roll);
+        *ptr=temp->next;
+        free(temp);
+        temp=NULL;
+        --nodecount;
+}
+
+void display(ST *ptr)
+{
+        if(nodecount==0)
+        {
+                printf("Stack is empty\n");
+                return;
+        }
+        while(ptr!=0)
+        {
+                printf("%d ",ptr->roll);
+                ptr=ptr->next;
+        }
+        printf("\n");
+}
