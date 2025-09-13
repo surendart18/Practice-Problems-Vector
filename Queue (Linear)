@@ -1,0 +1,64 @@
+Implementation of Linear Queue using Arrays
+
+
+#include<stdio.h>
+#define max 5
+int q[max];
+int rear=0,front=0;
+
+void dequeue();
+void display();
+void enqueue();
+int main()
+{
+        int op;
+        while(1)
+        {
+                printf("Enter the option1.push 2.pop 3.display 4.exit\n");
+                scanf("%d",&op);
+                switch(op)
+                {
+                        case 1: enqueue(); break;
+                        case 2: dequeue(); break;
+                        case 3: display(); break;
+                        case 4: printf("Queue operation is Over!\n");return 0;
+                        default : printf("Invalid Option\n"); return 0;
+                }
+        }
+}
+
+void enqueue()
+{
+        int ele;
+
+        if(rear==max)
+        {
+                printf("Queue is Overflow\n");
+                return;
+        }
+
+        printf("Enter the element to insert\n");
+        scanf("%d",&ele);
+
+        q[rear++]=ele;
+        printf("%d is inserted into Queue\n",ele);
+}
+
+void dequeue()
+{
+        if((rear==0) || (front==rear))
+        {
+                printf("Queue is Underflow\n");
+                return;
+        }
+        printf("%d is deleted from Queue\n",q[front]);
+        q[front++]=0;
+}
+
+void display()
+{
+        int i;
+        for(i=0;i<max;i++)
+                printf("%d ",q[i]);
+        printf("\n");
+}
