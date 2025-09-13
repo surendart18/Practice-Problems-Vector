@@ -1,0 +1,19 @@
+Save the Data for Circular Double Linked List using save()
+
+
+void save(ST *ptr)              // ST *ptr=hptr;
+{
+        ST *temp=ptr;
+        if(ptr == NULL)
+        {
+                printf("List is empty. Nothing to save.\n");
+                return;
+        }
+
+        FILE *fp=fopen("data3.txt","w");
+        do
+        {
+                fprintf(fp,"%d %s %f\n",temp->roll,temp->name,temp->marks);
+                temp=temp->next;
+        }while(temp!=ptr);
+}
