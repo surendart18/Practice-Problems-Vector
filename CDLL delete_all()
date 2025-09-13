@@ -1,0 +1,19 @@
+Delete all the Nodes for Circular Double Linked List using delete_all()
+
+
+
+
+void delete_all(ST **ptr)              // ST **ptr=&hptr;
+{
+        if(*ptr==0)
+                return;
+        ST *temp=*ptr;
+        ST *last;
+        do
+        {
+                last=temp->next;
+                free(temp);
+                temp=last;
+        }while(temp!=*ptr);
+        *ptr=NULL;
+}
