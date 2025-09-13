@@ -1,0 +1,32 @@
+Delete the Node based on Roll for Circular Double Linked List using delete_node()
+
+
+
+void delete_node(ST **ptr,int n)                  // ST **ptr=&hptr,int n=roll;
+{
+        ST *temp=*ptr;
+        if(temp->next==*ptr && temp->roll==n)
+        {
+                free(temp);
+                *ptr=NULL;
+                return;
+        }
+
+        do
+        {
+                if(temp->roll==n)
+                {
+                        temp->prev->next=temp->next;
+                        temp->next->prev=temp->prev;
+
+                        if(temp==*ptr)
+                        {
+                                *ptr=temp->next;
+                        }
+                        free(temp);
+                        return ;
+                }
+                temp=temp->next;
+        }while(temp!=*ptr);
+        printf("Roll %d Not Found\n",n);
+}
