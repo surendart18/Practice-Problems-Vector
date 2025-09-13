@@ -1,0 +1,23 @@
+Insert the Data for Circular Double Linked List using add_begin()
+
+
+
+void add_begin(ST **ptr)              // ST **ptr=&hptr;
+{
+        ST *temp=(ST *)malloc(sizeof(ST));
+        printf("Enter the Roll, Name, Marks\n");
+        scanf("%d %s %f",&temp->roll,temp->name,&temp->marks);
+        if(*ptr==0)
+        {
+                temp->next=temp;
+                temp->prev=temp;
+                *ptr=temp;
+                return ;
+        }
+        ST *last=(*ptr)->prev;
+        temp->prev=last;
+        temp->next=*ptr;
+        last->next=temp;
+        (*ptr)->prev=temp;
+        *ptr=temp;
+}
