@@ -1,0 +1,13 @@
+Printing the Data for Circular Linked Double Linked List using print()
+
+
+void print(ST *ptr)                  // ST *ptr=hptr;
+{
+        ST *temp=ptr;
+        while(temp->next!=ptr)
+        {
+                printf("%d %s %f\n",temp->roll,temp->name,temp->marks);
+                temp=temp->next;
+        }
+                printf("%d %s %f\n",temp->roll,temp->name,temp->marks);
+}
